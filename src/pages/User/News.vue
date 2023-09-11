@@ -1,6 +1,6 @@
 <template>
     <div class=" max-w-[1230px] mx-auto px-[15px]">
-        <p class=" text-center text-primary font-medium md:text-lg mb-2 uppercase">Cẩm nang du lịch</p>
+        <p class=" text-center text-primary font-medium md:text-lg mb-2 uppercase">Cẩm nang du lịch trong nước</p>
          <div v-if="loading">
             <div class="loader">
                 <div>
