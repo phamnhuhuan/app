@@ -16,7 +16,7 @@
       @apply pr-4 cursor-pointer hover:opacity-70 transition-all
     }
     .icon_menu{
-      @apply h-[35px] w-[35px] bg-list rounded-[50%] flex cursor-pointer text-[17px] 
+      @apply h-[34px] w-[34px] bg-list text-[17px] rounded-[50%] flex cursor-pointer 
     }
     .bar.active {
       @apply translate-x-0 transition-all
