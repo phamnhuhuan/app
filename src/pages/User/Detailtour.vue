@@ -1,9 +1,9 @@
 <template>
     <div class="loader" v-if="loading">
         <div>
-        <img src="https://huanapi.000webhostapp.com/image/loading.gif" alt="">
+            <img src="https://huanapi.000webhostapp.com/image/loading.gif" alt="">
+        </div>
     </div>
-</div>
     <div class=" max-w-[1230px] mx-auto px-[15px] mb-3" v-else>
         <div class="">
             <p class=" text-primary uppercase font-medium text-xl">{{ tour.name_tour }}</p>
@@ -89,43 +89,56 @@
 </template>
 <script>
 import useImage from '../../store/LinkImage/getimage'
-import { reactive, toRefs, ref } from 'vue'
-import { useRoute ,useRouter} from "vue-router";
+import { reactive, toRefs, ref ,watch} from 'vue'
+import { useRoute, useRouter } from "vue-router";
 
 export default {
     setup() {
         const route = useRoute()
         const id = route.params.id;
+        const id_change = ref(route.params.id)
+        watch(route, (to, from) => {
+            id_change.value = to.params.id
+            axios.get(`https://huanapi.000webhostapp.com/api/tour/${id_change.value}`)
+                .then((response) => {
+                    setTimeout(() => {
+                        tab.loading = false
+                    }, 1000);
+                    tour.value = response.data.tour;
 
+                }).catch((err) => {
+
+                });
+        })
         const tab = reactive({
-            loading:true,
+            loading: true,
             opensend: false,
             tabs: 'tab1',
         })
         const form = reactive({
-            name_customer:'',
-            phone_customer:'',
-            cmt_customer:'',
-            date_customer:'',
-            id_tour:id
+            name_customer: '',
+            phone_customer: '',
+            cmt_customer: '',
+            date_customer: '',
+            id_tour: id
         })
-        const router=useRouter()
+        const router = useRouter()
         const { getimage } = useImage()
         const tour = ref({})
         const gettour = () => {
             axios.get(`https://huanapi.000webhostapp.com/api/tour/${id}`)
                 .then((response) => {
                     setTimeout(() => {
-                        tab.loading=false
+                        tab.loading = false
                     }, 1000);
                     tour.value = response.data.tour;
 
                 }).catch((err) => {
-                   
+
                 });
         }
         gettour()
-        const err_customer=ref({})
+        const err_customer = ref({})
         const addcustomer = () => {
             const formData = new FormData();
             formData.append('name_customer', form.name_customer);
@@ -133,22 +146,22 @@ export default {
             formData.append('cmt_customer', form.cmt_customer);
             formData.append('date_customer', form.date_customer);
             formData.append('id_tour', form.id_tour);
-            axios.post('https://huanapi.000webhostapp.com/api/customer',formData)
+            axios.post('https://huanapi.000webhostapp.com/api/customer', formData)
                 .then((response) => {
-                    form.name_customer=""
-                    form.phone_customer=""
-                    form.cmt_customer=""
-                    form.date_customer=""
+                    form.name_customer = ""
+                    form.phone_customer = ""
+                    form.cmt_customer = ""
+                    form.date_customer = ""
                     router.push({ name: 'thankyou' })
-                   
+
                 }).catch((error) => {
-                    
-                    err_customer.value=error.response.data.errors
-                   
+
+                    err_customer.value = error.response.data.errors
+
                 });
         }
         return {
-          
+            id_change,
             router,
             err_customer,
             addcustomer,
@@ -157,7 +170,7 @@ export default {
             route,
             ...toRefs(tab),
             ...toRefs(form)
-            
+
         }
     }
 }
