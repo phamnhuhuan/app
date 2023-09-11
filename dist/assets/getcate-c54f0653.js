@@ -1,1 +1,0 @@
-import{r as e}from"./index-4ddc6401.js";const s=()=>{const a=e([]);return{cate:a,getcate:()=>{axios.get("https://huanapi.000webhostapp.com/api/cate").then(t=>{a.value=t.data.cate}).catch(t=>{console.log(t)})}}};export{s as u};
