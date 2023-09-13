@@ -1,7 +1,7 @@
 <template>
     <div class="loader" v-if="loading">
         <div>
-            <img src="https://huanapi.000webhostapp.com/image/loading.gif" alt="">
+            <img src="../../assets/image/loading.gif" alt="">
         </div>
     </div>
     <div class=" max-w-[1230px] mx-auto px-[15px] mb-3" v-else>

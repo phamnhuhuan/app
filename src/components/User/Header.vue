@@ -27,7 +27,7 @@
         <div class="flex justify-between lg:justify-center items-center my-1">
             <RouterLink :to="{name:'home'}">
                 <div class=" max-w-[60px] md:max-w-[80px] lg:mr-7">
-                    <img src="https://huanapi.000webhostapp.com/image/logo.png" alt="">
+                    <img src="../../assets/image/logo.png" alt="">
                 </div>
             </RouterLink>
             <div class=" hidden lg:block">
@@ -98,7 +98,7 @@
                     <i class="fa-solid fa-xmark cursor-pointer" v-on:click="openbar = !openbar"></i>
                 </div>
                 <div class=" p-3">
-                    <RouterLink to="">
+                    <RouterLink :to="{name:'home'}">
                         <div class=" border-b py-2 border-list" v-on:click="openbar = !openbar"><span class=" mr-4"><i
                                     class="fa-solid fa-house-user"></i></span>Trang chủ</div>
                     </RouterLink>

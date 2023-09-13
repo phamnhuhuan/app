@@ -3,7 +3,7 @@
    <div v-if="loading">
             <div class="loader">
                 <div>
-                    <img src="https://huanapi.000webhostapp.com/image/loading.gif" alt="">
+                    <img src="../../assets/image/loading.gif" alt="">
                 </div>
             </div>
         </div>
@@ -28,10 +28,10 @@
    delay: 2700,
    disableOnInteraction: false,
 }">
-         <swiper-slide><img src="https://huanapi.000webhostapp.com/image/slider1.jpg" alt=""></swiper-slide>
-         <swiper-slide><img src="https://huanapi.000webhostapp.com/image/slider5.png" alt=""></swiper-slide>
-         <swiper-slide><img src="https://huanapi.000webhostapp.com/image/slider3.jpg" alt=""></swiper-slide>
-         <swiper-slide><img src="https://huanapi.000webhostapp.com/image/slider4.jpg" alt=""></swiper-slide>
+         <swiper-slide><img src="../../assets/image/slider1.jpg" alt=""></swiper-slide>
+         <swiper-slide><img src="../../assets/image/slider2.png" alt=""></swiper-slide>
+         <swiper-slide><img src="../../assets/image/slider3.jpg" alt=""></swiper-slide>
+         <swiper-slide><img src="../../assets/image/slider4.jpg" alt=""></swiper-slide>
       </swiper>
    </div>
    <!-- end slider -->
@@ -75,10 +75,10 @@
    <div class=" max-w-[1230px] px-[15px] mx-auto"  data-aos="slide-right">
       <div class=" sm:flex sm:justify-between pb-2">
          <div class=" mt-2 sm:mr-4">
-            <img src="https://huanapi.000webhostapp.com/image/travel2.jpg" alt="" class=" rounded-md">
+            <img src="../../assets/image/travel2.jpg" alt="" class=" rounded-md">
          </div>
          <div class=" mt-2">
-            <img src="https://huanapi.000webhostapp.com/image/travel1.jpg" alt="" class=" rounded-md">
+            <img src="../../assets/image/travel1.jpg" alt="" class=" rounded-md">
          </div>
       </div>
    </div>

@@ -2,7 +2,7 @@
    <div v-if="loading">
       <div class="loader">
          <div>
-            <img src="https://huanapi.000webhostapp.com/image/loading.gif" alt="">
+            <img src="../../assets/image/loading.gif" alt="">
          </div>
       </div>
    </div>
