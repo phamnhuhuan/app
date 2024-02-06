@@ -1,0 +1,1 @@
+import{r as a}from"./index-fd763937.js";const r=()=>{const t=a([]),s=a(!0);return{loading:s,news:t,getnews:()=>{axios.get("https://huanapi.000webhostapp.com/api/new").then(e=>{e&&(setTimeout(()=>{s.value=!1},1e3),t.value=e.data.news)}).catch(e=>{})}}};export{r as u};
