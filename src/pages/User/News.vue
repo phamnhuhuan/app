@@ -33,29 +33,14 @@
     </div>
 </template>
 <script>
+import useNews from '../../store/news/getnews'
 import useImage from '../../store/LinkImage/getimage'
-import { ref } from 'vue'
 import { RouterLink } from 'vue-router';
 export default {
     setup() {
-        const news = ref([]);
-        const loading = ref(true)
+        const { news, getnews ,loading} = useNews()
         const { getimage } = useImage()
-        const getnews = () => {
-            axios.get('https://huanapi.000webhostapp.com/api/new')
-                .then((response) => {
-                    if (response) {
-                        setTimeout(() => {
-                            loading.value = false
-                        }, 1000);
-                        news.value = response.data.news;
-                    }
-
-                }).catch((err) => {
-
-                });
-        };
-        getnews();
+        getnews()
         return {
             loading,
             news,
